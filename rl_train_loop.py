@@ -6,7 +6,7 @@ import time
 
 class RLTrainLoop ():
 
-    def __init__ (self, num_actions, observation_size):
+    def __init__ (self, num_actions, observation_size, start_learning_after=5000):
 
         self.num_actions = num_actions
         self.observation_size = observation_size
@@ -20,7 +20,7 @@ class RLTrainLoop ():
 
         self.batch_size = 64
         self.max_experience_size = 1000000
-        self.start_learning_after = 5000
+        self.start_learning_after = start_learning_after
         self.store_every_nth = 5
 
         self.inp_rewards = tf.placeholder (tf.float32, (None,))
